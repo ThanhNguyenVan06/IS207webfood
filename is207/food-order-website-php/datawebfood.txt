@@ -72,10 +72,10 @@ rebuy int,
 totalprice decimal(10,2),
 Status varchar(100)
 )
-create table user 
+create table tbl_user 
 (
 id int AUTO_INCREAMENT primary key,
-username varchar(100),
+csusername varchar(100),
 full_name varchar(100),
 password varchar(100),
 phone int,
