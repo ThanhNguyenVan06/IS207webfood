@@ -11,6 +11,7 @@
     
 ?>
 <html>
+    <div>HAHA</div>
     <body>
     <?php
             while ($row = mysqli_fetch_assoc($res)){
@@ -23,11 +24,12 @@
                 if ($quantity == 0){
                     $sql = "DELETE From tbl_bill where id = '$id'";
                     $res = mysqli_query($conn,$sql);
-                    header("Location:"."http://localhost/is207/food-order-website-php/"."cart.php");
+                    ?>
+                    <meta http-equiv="refresh" content="0;url=cart.php">
+                    <?php
                 }
     ?>
     <form action="" method="POST" class="text-center">
-        
             Tên món: 
             <p><?php echo $foodname; ?></p>
             Số lượng: 
@@ -49,7 +51,9 @@
                     $quantity = $_POST["quantity".$id];
                     $sql = "UPDATE tbl_bill set quantity='$quantity' where id = '$id'";
                     $res = mysqli_query($conn,$sql);
-                    header("Location:"."http://localhost/is207/food-order-website-php/"."cart.php");
+                    ?>
+                    <meta http-equiv="refresh" content="0;url=cart.php">
+                    <?php
                 }
             }
         }
@@ -86,6 +90,7 @@
         <?php
             }
             else{
+                $_SESSION['cart'] = 0;
         ?>
             <h1>No product in the cart.</h1>
         <?php
