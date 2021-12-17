@@ -10,12 +10,25 @@
             <input type="submit" name="submit" value="Search" class="btn btn-primary">
             <div class="cart">
                 <a href ="<?php echo SITEURL; ?>cart.php"> <i class="fas fa-shopping-cart icon-cart" style="font-size:24px"></i>
-                <span class='badge badge-warning' id='lblCartCount'>
-                    <?php if($_SESSION['cart'] >= 0 ) 
-                {
-                    echo $_SESSION['cart'];
-                }
-                ?></span></a>
+                <?php
+                        $username = $_SESSION['username']; 
+                         $sql_cart = "SELECT * FROM tbl_bill WHERE username = '$username'";
+                        $res = mysqli_query($conn, $sql_cart);
+                        if (mysqli_num_rows($res)  > 0){
+                            $num = 0;
+                            while ($row = mysqli_fetch_assoc($res)){
+                                $num += $row['quantity'];
+                            }
+                            $_SESSION['cart'] = $num;
+                        }
+                            
+                            if ($_SESSION['cart'] > 0) {
+                                ?>
+                                <span class='badge badge-warning' id='lblCartCount'>
+                            <?php
+                                echo $_SESSION['cart'];
+                        }
+                        ?></a>
             </div>
         </form>
 

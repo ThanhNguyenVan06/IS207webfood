@@ -34,6 +34,10 @@
     $sql = "UPDATE  tbl_user set rebuy = '$rebuy' where csusername = '$username'";
     $res = mysqli_query($conn,$sql);
     if ($res == TRUE){
-        header("Location:"."http://localhost/is207/food-order-website-php/"."index.php");
+        $date = date("Y-m-d h:i:sa");
+        $notify = "Your order has been placed. Wait for minute, the staff will call you back";
+        $sql = "INSERT INTO adtouser (username,notify,date) values ('$username','$notify','$date')";
+        $res = mysqli_query($conn, $sql);
+        header("Location:".SITEURL."index.php");
     }
 ?>

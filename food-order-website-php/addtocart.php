@@ -31,5 +31,5 @@
         }
         echo 'ahihi__';
     }
-    header("Location:"."http://localhost/is207/food-order-website-php/"."foods.php");
+    header("Location:".SITEURL."foods.php");
 ?>
