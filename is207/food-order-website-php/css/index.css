@@ -1,0 +1,10 @@
+
+
+.image-wrap{
+    width: 95px;
+    height: 105px;
+    display: block;
+    border:  black 1px solid;
+    overflow: hidden;
+    border-radius: 10px;
+}

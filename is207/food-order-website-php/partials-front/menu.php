@@ -39,27 +39,27 @@
                         <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="<?php echo SITEURL; ?>about.php">Contact</a>
                     </li>
-                    <li>
+                    
+                    <li class="dropdown">
                         <a href="#" class = 'profile'>
                                 <i class="far fa-user icon-profile"></i>   <?php 
                                     echo $_SESSION['full_name']
                                 ?>
                         </a>
-                        <div class="category-profile">
-                                <ul>
-                                    <li>
+                        <div class=" dropdown-content category-profile">
+                                
                                         <a href="<?php echo SITEURL; ?>account.php" class="acc">Account information</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo SITEURL; ?>notification.php" class="note">Notification</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo SITEURL; ?>admin/logout.php" class="acc">Log out</a>
-                                    </li>
                                     
-                                </ul>
+                                    
+                                        <a href="<?php echo SITEURL; ?>notification.php" class="note">Notification</a>
+                                    
+                                   
+                                        <a href="<?php echo SITEURL; ?>admin/logout.php" class="acc">Log out</a>
+                                    
+                                    
+                              
                         </div>
                     </li>
                 </ul>

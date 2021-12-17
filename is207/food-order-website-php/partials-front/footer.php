@@ -1,5 +1,7 @@
+
 <!-- social Section Starts Here -->
-<section class="social">
+<footer style="background-color: white;">
+    <section class="social">
         <div class="container text-center">
             <ul>
                 <li>
@@ -19,10 +21,10 @@
     <!-- footer Section Starts Here -->
     <section class="footer">
         <div class="container text-center">
-            <p>All rights reserved. Designed By <a href="#">NongSanXanh</a></p>
+            <p>All rights reserved. Designed By <a href="#">wowFood</a></p>
         </div>
     </section>
     <!-- footer Section Ends Here -->
-
+</footer>
 </body>
 </html>

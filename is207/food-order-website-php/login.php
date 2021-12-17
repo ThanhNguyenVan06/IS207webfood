@@ -16,15 +16,21 @@
             </div>
             <form action="" method="POST" class="form" id="form-1">
                 <div class="form_group">
-                    <input id="email" name="username" type="text" placeholder="Enter your user name" class="form_control">
-                    <input id="password" name="password" type="password" placeholder="Enter your password" class="form_control">
+                    <input id="email" name="username" type="text" placeholder="Enter your user name" class="form_control" required>
+                    <input id="password" name="password" type="password" placeholder="Enter your password" class="form_control" required>
                 </div>
-                <div class="check_ad">
-                    <input type="radio" name="acc-ad" class = "btn-check" value="Admin">
-                    <p class="text-ad">Admin</p>
-                    <input type="radio" name="acc-ad" class = "btn-check" value="customer">
-                    <p class="text-ad">Customer</p>
+
+                <div class="radio-group">
+                    <input type="radio" name="acc-ad" value="Admin" required>
+                    <label class="text-ad">Admin</label>
+                   
                 </div>
+
+                <div class="radio-group">
+                    <input type="radio" name="acc-ad" value="customer">
+                    <label class="text-ad">Customer</label>
+                </div>
+
                 <div class="sign_in_btn">
                     <input type="submit" class='form_submit' name="submit" value="Sign In">
                 </div>
