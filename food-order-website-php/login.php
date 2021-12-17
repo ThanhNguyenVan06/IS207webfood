@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
         $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             $_SESSION['username'] = $username;
-            header("Location:" . "http://localhost:8012/is207/food-order-website-php/" . "admin/index.php");
+            header("Location:" . "http://localhost/is207/food-order-website-php/" . "admin/index.php");
         }
     } elseif ($_POST['acc-ad'] == "customer") {
         $sql = "SELECT* from tbl_user WHERE csusername = '$username' AND password = '$password'";
@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
             // Add session banner
             $_SESSION['banner'] = "Yes";
 
-            header("Location:" . "http://localhost:8012/is207/food-order-website-php/" . "index.php");
+            header("Location:" . "http://localhost/is207/food-order-website-php/" . "index.php");
         }
     }
 }

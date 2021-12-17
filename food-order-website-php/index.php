@@ -31,7 +31,8 @@ if (isset($_SESSION['order'])) {
 if (isset($_SESSION['banner'])) {
     $sql3 = "SELECT * FROM tbl_banner ORDER BY RAND() LIMIT 1;";
     $res3 = mysqli_query($conn, $sql3);
-    if ($res3 == true) {
+    $count = mysqli_num_rows($res3);
+    if ($count > 0) {
         $row3 = mysqli_fetch_array($res3);
         $image_name3 = $row3['image_name'];
 ?>
@@ -46,6 +47,7 @@ if (isset($_SESSION['banner'])) {
 <?php
         unset($_SESSION['banner']);
     } else {
+        echo "No Banner Added";
     }
 }
 ?>

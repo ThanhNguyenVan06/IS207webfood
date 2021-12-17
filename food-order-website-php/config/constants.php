@@ -4,7 +4,7 @@
 
 
     //Create Constants to Store Non Repeating Values
-    define('SITEURL', 'http://localhost:8012/is207/food-order-website-php/');
+    define('SITEURL', 'http://localhost/is207/food-order-website-php/');
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass ="";
