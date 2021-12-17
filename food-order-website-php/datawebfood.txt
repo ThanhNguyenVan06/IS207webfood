@@ -1,0 +1,85 @@
+create table tbl_bill_ad(
+id int AUTO_INCREMENT primary key,
+username varchar(100),
+foodname varchar(100),
+quantity int,
+price decimal(10,2),
+rebuy int
+)
+create table adtouser
+(
+id int AUTO_INCREAMENT primary key,
+username varchar(100),
+notify text,
+date datetime
+)
+create table tbl_admin
+(
+id int AUTO_INCREAMENT primary key,
+username varchar(100),
+full_name varchar(100),
+password varchar(50) 
+)
+create table tbl_bill
+(
+id int AUTO_INCREAMENT primary key,
+username varchar(100),
+foodname varchar(100),
+quantity int,
+price decimal(10,2)
+)
+create table tbl_bill_ad
+(
+id int AUTO_INCREAMENT primary key,
+username varchar(100),
+foodname varchar(100),
+quantity int,
+price decimal(10,2),
+rebuy int
+)
+create table tbl_category
+(
+id int AUTO_INCREAMENT primary key,
+title varchar(100),
+image_name varchar(255),
+featured varchar(10),
+active varchar(10)
+)
+create table tbl_feedback
+(
+id int AUTO_INCREAMENT primary key,
+feedback text
+)
+create table tbl_food
+(
+id int AUTO_INCREAMENT primary key,
+title varchar(100),
+price decimal(10,2),
+description text,
+image_name varchar(255),
+category_id int,
+featured varchar(10),
+active varchar(10)
+)
+create table tbl_ship
+(
+id int AUTO_INCREAMENT primary key,
+username varchar(100),
+fullname varchar(100),
+phone int,
+address text,
+rebuy int,
+totalprice decimal(10,2),
+Status varchar(100)
+)
+create table tbl_user 
+(
+id int AUTO_INCREAMENT primary key,
+csusername varchar(100),
+full_name varchar(100),
+password varchar(100),
+phone int,
+address text,
+rebuy int
+
+)

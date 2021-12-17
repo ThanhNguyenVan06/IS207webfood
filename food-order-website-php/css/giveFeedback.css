@@ -1,0 +1,43 @@
+
+
+.fbk-text{
+    width: 90%;
+    margin-bottom: 8px;
+}
+
+.fbk-sent-btn{
+    border: none;
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: 5px;
+    font-weight: 600;
+    
+}
+
+.sent-fbk-form{
+    display: block;
+    width: 700px;
+    height: 300px;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.sent-fbk-form-header{
+    display: block;
+    height: 2.4rem;
+    width: 100%;
+    background-color: rgb(255,199,54);
+    line-height: 2.4rem;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px  5px  0 0;
+}
+.sent-fbk-form-text-contain{
+    margin: 20px;
+    margin-top: 20px;
+}
