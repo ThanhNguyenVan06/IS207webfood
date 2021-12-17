@@ -11,7 +11,7 @@
             <div class="cart">
                 <a href ="<?php echo SITEURL; ?>cart.php"> <i class="fas fa-shopping-cart icon-cart" style="font-size:24px"></i>
                 <span class='badge badge-warning' id='lblCartCount'>
-                    <?php if($_SESSION['cart'] > 0 ) 
+                    <?php if($_SESSION['cart'] >= 0 ) 
                 {
                     echo $_SESSION['cart'];
                 }
