@@ -135,3 +135,4 @@ $address =   $_SESSION['address']
         }
     }
 ?>
+<?php include('partials-front/footer.php'); ?>
