@@ -61,11 +61,11 @@
                 <tr>
                 <td> <p><?php echo $foodname; ?></p></td>
                 <td><input class="qty-input" type="number" id="quantity" name="<?php echo "quantity".$id?>" value= "<?php echo $quantity?>"min="0"></td>
-                <td><p><?php
+                <td><?php
                     $total += $price*$quantity;
                     $temp1 = $price*$quantity;
                     echo $temp1; 
-                    ?>$</p></td>
+                    ?>$</td>
                 <td>            <input type="submit" class="change-btn btn-primary" name="Change" value="Confirm">
                 </td>
             </tr>
