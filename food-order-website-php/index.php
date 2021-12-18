@@ -94,8 +94,11 @@ if (isset($_SESSION['banner'])) {
                         } else {
                             //Image Available
                         ?>
-                            <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve">
-                        <?php
+                            <div class="wrap-category-image">
+                           
+                            <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve category-image">
+                            </div>
+                       <?php
                         }
                         ?>
 
@@ -159,9 +162,10 @@ if (isset($_SESSION['banner'])) {
                             echo "<div class='error'>Image not available.</div>";
                         } else {
                             //Image Available
-                        ?>
-                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                        <?php
+                        ?>  <div class="image-wrap">     
+                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve food-item-image">
+                            </div>
+                      <?php
                         }
                         ?>
 

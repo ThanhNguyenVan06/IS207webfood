@@ -66,7 +66,8 @@
                                 {
                                     //Image Available
                                     ?>
-                                    <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                    <div class="image-wrap"></div>
+                                    <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve food-item-image">
                                     <?php 
 
                                 }

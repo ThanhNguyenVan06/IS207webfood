@@ -25,13 +25,40 @@
   background-repeat: no-repeat;
 }
 
-.image-wrap {
+
+.image-wrap{
   width: 95px;
   height: 105px;
   display: block;
-  background-color: white;
+  border:  rgba(0,0,0,0.3) 1px solid;
   overflow: hidden;
   border-radius: 15px;
+}
+.wrap-category-image{
+  display: block;
+  box-shadow: 2px 3px 2px 3px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+  
+}
+
+.category-image {
+  border-radius: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+
+.food-item-image{
+  display: block;
+  width: 95px;
+  height: 105px;
+  background-size: contain;
+  border-radius: 15px;
+  background-repeat: no-repeat;
 }
 
 .text-right {

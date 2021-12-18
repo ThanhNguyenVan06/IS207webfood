@@ -44,8 +44,10 @@
                                 {
                                     //Image Available
                                     ?>
-                                    <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve">
-                                    <?php
+                                    <div class="wrap-category-image">
+                                    <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve categ category-image">
+                                    </div>
+                                   <?php
                                 }
                             ?>
                             

@@ -21,7 +21,7 @@
     <!-- footer Section Starts Here -->
     <section class="footer">
         <div class="container text-center">
-            <p>All rights reserved. Designed By <a href="#">wowFood</a></p>
+            <p style="justify-content: center;">All rights reserved. Designed By <a href="#"> wowFood</a></p>
         </div>
     </section>
     <!-- footer Section Ends Here -->
