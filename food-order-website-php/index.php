@@ -9,24 +9,9 @@
             <input type="submit" name="submit" value="Search" class="btn btn-primary">
             <div class="cart">
                 <a href="cart.php"> <i class="fas fa-shopping-cart icon-cart" style="font-size:24px"></i>
-                    
-                        <?php
-                        $username = $_SESSION['username']; 
-                         $sql_cart = "SELECT * FROM tbl_bill WHERE username = '$username'";
-                        $res = mysqli_query($conn, $sql_cart);
-                        if (mysqli_num_rows($res)  > 0){
-                            $num = 0;
-                            while ($row = mysqli_fetch_assoc($res)){
-                                $num += $row['quantity'];
-                            }
-                            $_SESSION['cart'] = $num;
-                        }
-                            
-                            if ($_SESSION['cart'] > 0) {
-                                ?>
-                                <span class='badge badge-warning' id='lblCartCount'>
-                            <?php
-                                echo $_SESSION['cart'];
+                    <span class='badge badge-warning' id='lblCartCount'>
+                        <?php if ($_SESSION['cart'] >= 0) {
+                            echo $_SESSION['cart'];
                         }
                         ?></ơ>
                 </a>
@@ -61,9 +46,7 @@ if (isset($_SESSION['banner'])) {
         </div>
 <?php
         unset($_SESSION['banner']);
-    } else {
-        echo "No Banner Added";
-    }
+    } 
 }
 ?>
 
@@ -177,10 +160,8 @@ if (isset($_SESSION['banner'])) {
                         } else {
                             //Image Available
                         ?>
-                        <div class="image-wrap">
                             <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                            </div>
-                       <?php
+                        <?php
                         }
                         ?>
 
@@ -207,8 +188,18 @@ if (isset($_SESSION['banner'])) {
         }
 
         ?>
+
+
+
         <div class="clearfix"></div>
+
+
+
     </div>
+
+    <p class="text-center">
+        <a href="#">See All Foods</a>
+    </p>
 </section>
 <!-- fOOD Menu Section Ends Here -->
 
