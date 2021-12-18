@@ -104,30 +104,61 @@
                 //Don't Upload Image and set the image_name value as blank
                 $image_name = "";
             }
+            // UPDATE
+            $sql2 = "SELECT * FROM tbl_banner";
+            $res2 = mysqli_query($conn, $sql2);
 
-            //2. Create SQL Query to Insert CAtegory into Database
-            $sql = "INSERT INTO tbl_banner SET 
+            $count2 = mysqli_num_rows($res2);
+
+            if ($count2 == 1) {
+                $row2 = mysqli_fetch_assoc($res2);
+                $id = $row2['id'];
+                $current_image = $row2['image_name'];
+                $remove_path = "../images/banner/" . $current_image;
+
+                $remove = unlink($remove_path);
+                $sql3 = "UPDATE tbl_banner SET 
+                    title = '$title',
+                    image_name = '$image_name'
+                    WHERE id=$id
+                ";
+                $res3 = mysqli_query($conn, $sql3);
+
+                //4. REdirect to Manage Category with MEssage
+                //CHeck whether executed or not
+                if ($res3 == true) {
+                    //Category Updated
+                    $_SESSION['update'] = "<div class='success'>Banner Updated Successfully.</div>";
+                    header('location:' . SITEURL . 'admin/manage-banner.php');
+                } else {
+                    //failed to update category
+                    $_SESSION['update'] = "<div class='error'>Failed to Update Banner.</div>";
+                    header('location:' . SITEURL . 'admin/manage-banner.php');
+                }
+            } else {
+                //2. Create SQL Query to Insert CAtegory into Database
+                $sql = "INSERT INTO tbl_banner SET 
                     title='$title',
                     image_name='$image_name'
                 ";
 
-            //3. Execute the Query and Save in Database
-            $res = mysqli_query($conn, $sql);
+                //3. Execute the Query and Save in Database
+                $res = mysqli_query($conn, $sql);
 
-            //4. Check whether the query executed or not and data added or not
-            if ($res == true) {
-                //Query Executed and Category Added
-                $_SESSION['add'] = "<div class='success'>Banner Added Successfully.</div>";
-                //Redirect to Manage Category Page
-                header('location:' . SITEURL . 'admin/manage-banner.php');
-            } else {
-                //Failed to Add CAtegory
-                $_SESSION['add'] = "<div class='error'>Failed to Add Banner.</div>";
-                //Redirect to Manage Category Page
-                header('location:' . SITEURL . 'admin/add-banner.php');
+                //4. Check whether the query executed or not and data added or not
+                if ($res == true) {
+                    //Query Executed and Category Added
+                    $_SESSION['add'] = "<div class='success'>Banner Added Successfully.</div>";
+                    //Redirect to Manage Category Page
+                    header('location:' . SITEURL . 'admin/manage-banner.php');
+                } else {
+                    //Failed to Add CAtegory
+                    $_SESSION['add'] = "<div class='error'>Failed to Add Banner.</div>";
+                    //Redirect to Manage Category Page
+                    header('location:' . SITEURL . 'admin/add-banner.php');
+                }
             }
         }
-
         ?>
 
     </div>
