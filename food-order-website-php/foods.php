@@ -65,6 +65,7 @@
                     $description = $row['description'];
                     $price = $row['price'];
                     $image_name = $row['image_name'];
+                    $featured = $row['featured'];
                     ?>
                     
                     <div class="food-menu-box">
@@ -95,9 +96,20 @@
                             <p class="food-detail">
                                 <?php echo $description; ?>
                             </p>
+                            <?php
+                            if ($featured=="Yes"){
+                            ?>
                             <br>
                             <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
                             <a href="<?php echo SITEURL; ?>addtocart.php?food_id=<?php echo $id; ?>" class="btn btn-primary-add">Add to cart</a>
+                            <?php
+                            }else{
+                            ?>
+                            <br>
+                            <p> Sell out </p>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
 

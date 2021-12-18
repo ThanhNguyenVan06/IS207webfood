@@ -41,7 +41,8 @@ $address =   $_SESSION['address']
           </div>
       
           <div class="form-group">
-            <label for="password_confirmation" class="form-label">Password Confirmation</label>
+            <label for="password_confirmation" class="form-label">Password Confirmation :</label>
+            <br>
             <input id="password_confirmation" name="password_confirmation"  placeholder="Confirm password" type="password" class="form-control">
           </div>
           <div class="form-group">

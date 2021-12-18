@@ -47,6 +47,7 @@
                             <td><?php echo $sn++; ?>. </td>
                             <td><?php echo $date; ?></td>
                             <td><?php echo $notify; ?></td>
+                            <td><a href="<?php echo SITEURL; ?>delete-notify.php?id=<?php echo $id; ?>" class="btn-danger btn">Delete</a></td>
                             </tr>
                             <?php
                             }
