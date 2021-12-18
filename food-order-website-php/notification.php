@@ -43,9 +43,11 @@
                             }
                             else{
                             ?>
+                            </tr>
                             <td><?php echo $sn++; ?>. </td>
                             <td><?php echo $date; ?></td>
                             <td><?php echo $notify; ?></td>
+                            </tr>
                             <?php
                             }
                             ?>
@@ -58,7 +60,11 @@
                         }
                         else {
                     ?>  
-                     <h1>No notification</h1>
+                     <div class="row">
+                         <div class="col-md-12">
+                     <img style="width :100%; height: 700px" src="https://assets.materialup.com/uploads/c55f144e-6102-48e7-8983-d585876c3a29/preview.jpg" alt="">
+                    </div>
+                    </div>
                     <?php
                       }
                     ?>

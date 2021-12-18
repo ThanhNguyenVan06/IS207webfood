@@ -169,7 +169,9 @@
     vertical-align: top;
     border-top: 1px solid #dee2e6;
   }
-  
+  .table-wrap{
+    min-height: 500px;
+  }
   .table tbody + tbody {
     border-top: 2px solid #dee2e6;
   }
