@@ -1,3 +1,59 @@
+
+
+<?php
+session_start();
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname  = "food_order";
+$loginerr = "";
+if (!$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)) {
+    die("Could not connect to my database");
+};
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+   
+    if ($_POST['acc-ad'] == "Admin") {
+        $sql = "SELECT* from tbl_admin WHERE username = '$username' AND password = '$password'";
+        $res = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($res) == 0 && !(empty($_POST['username'])) && !(empty($_POST['password']) ))
+        {
+            $loginerr = "username or password is incorrect !";
+        }
+        if (mysqli_num_rows($res) > 0) {
+            $_SESSION['username'] = $username;
+            header("Location:" ."http://localhost/IS207_FINAL/food-order-website-php/" . "admin/index.php");
+        }
+    } elseif ($_POST['acc-ad'] == "customer") {
+        $sql = "SELECT* from tbl_user WHERE csusername = '$username' AND password = '$password'";
+        $res = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($res) == 0 && !(empty($_POST['username'])) && !(empty($_POST['password']) ))
+        {
+            $loginerr = "username or password is incorrect !";
+        }
+        if (mysqli_num_rows($res) > 0) {
+            while ($row = mysqli_fetch_assoc($res)) {
+                $_SESSION['full_name'] = $row['full_name'];
+                $_SESSION['csusername'] = $row['csusername'];
+                $_SESSION['phone'] = $row['phone'];
+                $_SESSION['address'] = $row['address'];
+                $_SESSION['currentpassword'] = $row['password'];
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['receiver'] = $row['full_name'];
+                $_SESSION['phoneship'] = $row['phone'];
+                $_SESSION['addressship'] = $row['address'];
+                $_SESSION['cart'] = 0;
+            }
+            $_SESSION['username'] = $username;
+            // Add session banner
+            $_SESSION['banner'] = "Yes";
+
+            header("Location:" . "http://localhost/IS207_FINAL/food-order-website-php/" . "index.php");
+        }
+    }
+}
+?>
 <html lang="en">
 
 <head>
@@ -17,10 +73,11 @@
             </div>
             <form action="" method="POST" class="form" id="form-1">
                 <div class="form_group">
-                    <input id="email" name="username" type="text" placeholder="Enter your user name" class="form_control" required>
-                    <input id="password" name="password" type="password" placeholder="Enter your password" class="form_control" required>
-                </div>
+                    <input id="" name="username" type="text" placeholder="Enter your user name" class="form_control" required>
+                    <input id="" name="password" type="password" placeholder="Enter your password" class="form_control" required>
+                    <span class="form-message" style="font-size: 18px; color :red"><?php echo $loginerr ?></span>
 
+                </div>
                 <div class="radio-group">
                     <input type="radio" name="acc-ad" value="Admin" required>
                     <label class="text-ad">Admin</label>
@@ -45,48 +102,3 @@
 </body>
 
 </html>
-<?php
-session_start();
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname  = "food_order";
-if (!$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)) {
-    die("Could not connect to my database");
-};
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);
-
-    if ($_POST['acc-ad'] == "Admin") {
-        $sql = "SELECT* from tbl_admin WHERE username = '$username' AND password = '$password'";
-        $res = mysqli_query($conn, $sql);
-        if (mysqli_num_rows($res) > 0) {
-            $_SESSION['username'] = $username;
-            header("Location:" ."http://localhost/IS207_FINAL/food-order-website-php/" . "admin/index.php");
-        }
-    } elseif ($_POST['acc-ad'] == "customer") {
-        $sql = "SELECT* from tbl_user WHERE csusername = '$username' AND password = '$password'";
-        $res = mysqli_query($conn, $sql);
-        if (mysqli_num_rows($res) > 0) {
-            while ($row = mysqli_fetch_assoc($res)) {
-                $_SESSION['full_name'] = $row['full_name'];
-                $_SESSION['csusername'] = $row['csusername'];
-                $_SESSION['phone'] = $row['phone'];
-                $_SESSION['address'] = $row['address'];
-                $_SESSION['currentpassword'] = $row['password'];
-                $_SESSION['id'] = $row['id'];
-                $_SESSION['receiver'] = $row['full_name'];
-                $_SESSION['phoneship'] = $row['phone'];
-                $_SESSION['addressship'] = $row['address'];
-                $_SESSION['cart'] = 0;
-            }
-            $_SESSION['username'] = $username;
-            // Add session banner
-            $_SESSION['banner'] = "Yes";
-
-            header("Location:" . "http://localhost/IS207_FINAL/food-order-website-php/" . "index.php");
-        }
-    }
-}
-?>
