@@ -4,7 +4,7 @@
 
 
 <!-- CAtegories Section Starts Here -->
-<section class="categories">
+<section class="categories" style="min-height: 450px;">
     <div class="container">
         <h2 class="text-center">Explore Foods</h2>
 
